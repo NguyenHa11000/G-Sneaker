@@ -1,0 +1,11 @@
+.card-title-amuount {
+  float: right;
+}
+
+.cart-empty {
+  position: absolute;
+}
+
+.cart-empty-text {
+  font-size: 14px;
+}
