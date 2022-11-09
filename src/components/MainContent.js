@@ -40,7 +40,18 @@ const MainContent = () => {
     setCartId([...new_temp]);
     localStorage.setItem("item", JSON.stringify(new_temp));
   };
-
+  const removeItem = (id) => {
+    const temp = [...cartId];
+    temp.map((item, index) => {
+      if (item.id == id) {
+        item.amount = 0;
+      }
+      const new_temp = temp.filter((item) => item.amount > 0);
+      console.log(new_temp);
+      setCartId([...new_temp]);
+      localStorage.setItem("item", JSON.stringify(new_temp));
+    });
+  };
   useEffect(() => {
     // console.log(cartId);
   }, [cartId]);
@@ -53,6 +64,7 @@ const MainContent = () => {
           cartId={cartId}
           plusAmount={plusAmount}
           minusAmount={minusAmount}
+          removeItem={removeItem}
         />
       </div>
     </>

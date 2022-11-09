@@ -5,7 +5,13 @@ import data from "../app/data/shoes.json";
 import logo from "../app/assets/nike.png";
 import CartItem from "./CartItem";
 
-const Cart = ({ addProducttocart, cartId, plusAmount, minusAmount }) => {
+const Cart = ({
+  addProducttocart,
+  cartId,
+  plusAmount,
+  minusAmount,
+  removeItem,
+}) => {
   const shoes = data.shoes;
   var sum = 0;
   cartId.map(
@@ -38,6 +44,7 @@ const Cart = ({ addProducttocart, cartId, plusAmount, minusAmount }) => {
                         cartId={cartId}
                         plusAmount={plusAmount}
                         minusAmount={minusAmount}
+                        removeItem={removeItem}
                       />
                     </>
                   ))}

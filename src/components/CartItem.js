@@ -37,7 +37,11 @@ const CartItem = (prop) => {
               </div>
             </div>
             <div className="cart-item-remove">
-              <img src={trash} class="cart-item-remove-icon"></img>
+              <img
+                src={trash}
+                className="cart-item-remove-icon"
+                onClick={(e) => prop.removeItem(prop.shoe.id)}
+              ></img>
             </div>
           </div>
         </div>
